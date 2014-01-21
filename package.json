@@ -1,13 +1,9 @@
 {
   "name": "grunt-litmus",
-  "description": "USend email tests to Litmus",
+  "description": "Send email tests to Litmus",
   "version": "0.1.0",
   "homepage": "https://github.com/jpeter/grunt-litmus",
-  "author": {
-    "name": "Jeremy Peter",
-    "email": "jeremywpeter@gmail.com",
-    "url": "http://www.jeremypeterdesigns.com"
-  },
+  "author": "Jeremy Peter <jeremywpeter@gmail.com> (http://www.jeremypeterdesigns.com)",
   "repository": {
     "type": "git",
     "url": "git://github.com/jpeter/grunt-litmus.git"
@@ -47,5 +43,10 @@
     "nodemailer": "~0.6.0",
     "request": "~2.33.0",
     "async": "~0.2.9"
-  }
+  },
+  "directories": {
+    "example": "example",
+    "test": "test"
+  },
+  "license": "ISC"
 }

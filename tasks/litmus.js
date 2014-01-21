@@ -10,41 +10,43 @@
 
 module.exports = function(grunt) {
 
-  // Please see the Grunt documentation for more information regarding task
-  // creation: http://gruntjs.com/creating-tasks
+  var Litmus = require('./lib/litmus'),
+      _ = require('lodash'),
+      async = require('async'),
+      cheerio = require('cheerio');
+  
 
-  grunt.registerMultiTask('litmus', 'Your task description goes here.', function() {
-    // Merge task-specific and/or target-specific options with these defaults.
-    var options = this.options({
-      punctuation: '.',
-      separator: ', '
-    });
+  grunt.registerMultiTask('litmus', 'Send test to Litmus', function() {
+    
+    var options = this.options(),
+        done = this.async(),
+        date = grunt.template.today('yyyy-mm-dd'),
+        files = this.filesSrc;
 
     // Iterate over all specified file groups.
-    this.files.forEach(function(f) {
-      // Concat specified files.
-      var src = f.src.filter(function(filepath) {
-        // Warn on and remove invalid source files (if nonull was set).
-        if (!grunt.file.exists(filepath)) {
-          grunt.log.warn('Source file "' + filepath + '" not found.');
-          return false;
-        } else {
-          return true;
-        }
-      }).map(function(filepath) {
-        // Read file source.
-        return grunt.file.read(filepath);
-      }).join(grunt.util.normalizelf(options.separator));
+    async.eachSeries(files, function(file, next) {
+      
+     var  html    = grunt.file.read(file),
+          litmus = new Litmus(options),
+          subject = options.subject,
+          $       = cheerio.load(html),
+          $title  = $('title').text().trim();
 
-      // Handle options.
-      src += options.punctuation;
+      if( (subject === undefined) || (subject.trim().length === 0) ){
+        subject = $title;
+      }
 
-      // Write the destination file.
-      grunt.file.write(f.dest, src);
+      // If no subject or title then set to date
+      if(subject.trim().length === 0){
+        subject = date;
+      }  
+      
+      litmus.run(html, subject.trim(), next);
 
-      // Print a success message.
-      grunt.log.writeln('File "' + f.dest + '" created.');
+    }, function() {
+      done();
     });
+  
   });
 
 };

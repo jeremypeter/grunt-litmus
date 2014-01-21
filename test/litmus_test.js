@@ -1,6 +1,7 @@
 'use strict';
 
-var grunt = require('grunt');
+var grunt = require('grunt'),
+    Litmus = require('../tasks/lib/litmus');
 
 /*
   ======== A Handy Little Nodeunit Reference ========
@@ -27,21 +28,25 @@ exports.litmus = {
     // setup here if necessary
     done();
   },
-  default_options: function(test) {
+  litmus: function(test) {
+    var litmusFunction = new Litmus({
+      subject: 'Custom subject line',
+      username : 'username',
+      password : 'password',
+      url      : 'https://yoursite.litmus.com',
+      applications : []
+    });
+
+    var htmlTest  = '<p></p>';
+
+    // TESTS
+    // ----------
     test.expect(1);
 
-    var actual = grunt.file.read('tmp/default_options');
-    var expected = grunt.file.read('test/expected/default_options');
-    test.equal(actual, expected, 'should describe what the default behavior is.');
+    var actual = grunt.file.read('test/expected/xmlOutput.xml');
+    var expected = litmusFunction.getBuiltXml(htmlTest, 'Test XML');
 
-    test.done();
-  },
-  custom_options: function(test) {
-    test.expect(1);
-
-    var actual = grunt.file.read('tmp/custom_options');
-    var expected = grunt.file.read('test/expected/custom_options');
-    test.equal(actual, expected, 'should describe what the custom option(s) behavior is.');
+    test.equal(expected, actual, 'Should return valid xml to send to Litmus');
 
     test.done();
   },

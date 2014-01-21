@@ -39,5 +39,13 @@
   },
   "keywords": [
     "gruntplugin"
-  ]
+  ],
+  "dependencies": {
+    "xmlbuilder": "~2.1.0",
+    "lodash": "~2.4.1",
+    "cheerio": "~0.13.1",
+    "nodemailer": "~0.6.0",
+    "request": "~2.33.0",
+    "async": "~0.2.9"
+  }
 }

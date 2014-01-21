@@ -15,7 +15,7 @@ module.exports = function(grunt) {
     jshint: {
       all: [
         'Gruntfile.js',
-        'tasks/*.js',
+        'tasks/**.js',
         '<%= nodeunit.tests %>',
       ],
       options: {
@@ -30,21 +30,39 @@ module.exports = function(grunt) {
 
     // Configuration to be run (and then tested).
     litmus: {
-      default_options: {
+      test: {
+        src: ['./example/email.html', 'email.html'],
         options: {
-        },
-        files: {
-          'tmp/default_options': ['test/fixtures/testing', 'test/fixtures/123'],
-        },
-      },
-      custom_options: {
-        options: {
-          separator: ': ',
-          punctuation: ' !!!',
-        },
-        files: {
-          'tmp/custom_options': ['test/fixtures/testing', 'test/fixtures/123'],
-        },
+          username: 'username',
+          password: 'password',
+          url: 'https://yourcompany.litmus.com',
+          clients: [
+            'appmail5',
+            'appmail6',
+            'ol2003', 
+            'ol2007', 
+            'ol2010',
+            'ol2011', 
+            'ol2013', 
+            'gmailnew', 
+            'ffgmailnew', 
+            'chromegmailnew',
+            'iphone5',
+            'iphone5s',
+            'ipad3',
+            'ipad',
+            'ipadmini',
+            'iphone4',
+            'outlookcom',
+            'ffoutlookcom',
+            'chromeoutlookcom',
+            'yahoo',
+            'ffyahoo',
+            'chromeyahoo'
+          ],
+          // subject: 'Custom subject line',
+          // delay: 1000
+        }
       },
     },
 

@@ -1,4 +1,4 @@
-# grunt-litmus
+# grunt-litmus [![Build Status](https://travis-ci.org/jeremypeter/grunt-litmus.png?branch=master)](https://travis-ci.org/jeremypeter/grunt-litmus)
 
 > Send email tests to Litmus
 
@@ -40,42 +40,42 @@ grunt.initConfig({
 #### options.username
 Type: `String`
 Default value: `''`
-_Required_: `yes`
+Required: `yes`
 
 Litmus username
 
 #### options.password
 Type: `String`
 Default value: `''` 
-_Required_: `yes`
+Required: `yes`
 
 Litmus password
 
 #### options.url
 Type: `String`
 Default value: `https://yourcompany.litmus.com`
-_Required_: `yes`
+Required: `yes`
 
 Litmus account url
 
 #### options.clients
 Type: `Array`
 Default value: `[]`
-_Required_: `yes`
+Required: `yes`
 
 Array of email clients to test. Can be found at https://yourcompany.litmus.com/clients.xml. The `<application_code>` tags contain the name e.g. Gmail Chrome: `<application_code> chromegmailnew </application_code>`
 
 #### options.subject
 Type: `String`
 Default value: `title of email`
-_Required_: `no`
+Required: `no`
 
 Adds subject line to Litmus test. If not set, then defaults to title of email. If `options.subject` and title of email are not set, then defaults to `yyyy/mm/dd`. _NOTE: Should only be used with a single src._
 
 #### options.delay
 Type: `Number`
 Default value: `3500`
-_Required_: `no`
+Required: `no`
 
 Change the delay between tests if multiple files are being sent. 
 

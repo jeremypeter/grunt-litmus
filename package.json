@@ -1,20 +1,20 @@
 {
   "name": "grunt-litmus",
   "description": "Send email tests to Litmus",
-  "version": "0.1.0",
-  "homepage": "https://github.com/jpeter/grunt-litmus",
+  "version": "0.1.1",
+  "homepage": "https://github.com/jeremypeter/grunt-litmus",
   "author": "Jeremy Peter <jeremywpeter@gmail.com> (http://www.jeremypeterdesigns.com)",
   "repository": {
     "type": "git",
-    "url": "git://github.com/jpeter/grunt-litmus.git"
+    "url": "git://github.com/jeremypeter/grunt-litmus.git"
   },
   "bugs": {
-    "url": "https://github.com/jpeter/grunt-litmus/issues"
+    "url": "https://github.com/jeremypeter/grunt-litmus/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/jpeter/grunt-litmus/blob/master/LICENSE-MIT"
+      "url": "https://github.com/jeremypeter/grunt-litmus/blob/master/LICENSE-MIT"
     }
   ],
   "main": "Gruntfile.js",

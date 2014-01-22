@@ -70,7 +70,7 @@ Type: `String`
 Default value: `title of email`
 Required: `no`
 
-Adds subject line to Litmus test. If not set, then defaults to title of email. If `options.subject` and title of email are not set, then defaults to `yyyy/mm/dd`. _NOTE: Should only be used with a single src._
+Adds subject line to Litmus test. If not set, then defaults to `<title>TITLE</title>`. If title not set, then defaults to `yyyy/mm/dd`
 
 #### options.delay
 Type: `Number`
@@ -101,4 +101,5 @@ grunt.initConfig({
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
+0.1.3 - Add +1 to each duplicate title   
 0.1.0 - Initial release

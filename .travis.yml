@@ -7,7 +7,7 @@ deploy:
   provider: npm
   email: jeremywpeter@gmail.com
   api_key:
-    secure: htpty9dphnR0IRUWiPZsfO2YdTekSWny5BXgPTjCMT4l7i9kNpNaQuX3MIll876lDmqmxsn4apyEfClgx1f6XlsSxroJEuWGls0kCf6EXe20F5gaaxi4ppBN0FK177Z/tmMUsZq8b099+4tiLNA/6ZUOltvLOworZ8eHU9SeNHg=
+    secure: g5lZXCD8aVV2QKfg1Z+WCgiCmUaaswUCshkhfyCUAiHmM/oGhqpGB8uuvVifC3DtHGtJaki/TX5lJEF57fAfY08sLakHfa6fodMbKI79Jg9u/RmgKj0U3hKEDVuId0IY4va9+aw/aCYrbOQAvONfeigwtLd592L5UZdui6eKcQU=
   on:
     tags: true
     repo: jeremypeter/grunt-litmus

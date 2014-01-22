@@ -31,7 +31,7 @@ module.exports = function(grunt) {
     // Configuration to be run (and then tested).
     litmus: {
       test: {
-        src: ['./example/email.html', 'email.html'],
+        src: ['./example/email.html'],
         options: {
           username: 'username',
           password: 'password',

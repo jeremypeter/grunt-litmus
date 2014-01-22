@@ -49,6 +49,5 @@
   "directories": {
     "example": "example",
     "test": "test"
-  },
-  "license": "ISC"
+  }
 }

@@ -24,7 +24,7 @@ Litmus.prototype.initVars = function() {
 
 // Run test
 Litmus.prototype.run = function(html, title, next) {
-  this.title = this.options.subject || title;
+  this.title = title;
   this.delay = this.options.delay || 3500
 
   if( (this.title === undefined) || (this.title.trim().length === 0) ){

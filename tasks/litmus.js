@@ -48,7 +48,7 @@ module.exports = function(grunt) {
         if(titleDups[subject] === undefined){
           titleDups[subject] = [];
         }else{
-          titleDups[subject].push(subject);
+          titleDups[subject].push(html);
         }
         
         if(titleDups[subject].length){

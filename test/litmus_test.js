@@ -1,7 +1,7 @@
 'use strict';
 
 var grunt = require('grunt'),
-    Litmus = require('../tasks/lib/litmus');
+    Litmus = require('./lib/test-litmus');
 
 /*
   ======== A Handy Little Nodeunit Reference ========
@@ -29,6 +29,7 @@ exports.litmus = {
     done();
   },
   litmus: function(test) {
+    
     var litmusFunction = new Litmus({
       subject: 'Custom subject line',
       username : 'username',

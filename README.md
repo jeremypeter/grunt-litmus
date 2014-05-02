@@ -97,9 +97,15 @@ grunt.initConfig({
 })
 ```
 
+## Troubleshooting
+
+If you're having issues with Litmus taking forever to load a test or the title of the test is showing up as "No Subject", it is most likely an issue with the Litmus API. You can check the [Litmus status](http://status.litmus.com) page to find out if their having any issues. If that's not the case, submit an issue and we'll look into further.
+
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
+0.1.5 - Added more logging information about a test. Fixes [#16](https://github.com/yargalot/Email-Builder/issues/16)  
+0.1.4 - Added options.delay  
 0.1.3 - Add +1 to each duplicate title   
 0.1.0 - Initial release

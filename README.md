@@ -105,6 +105,7 @@ If you're having issues with Litmus taking forever to load a test or the title o
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
+0.1.6 - Fixed a bug with cli-table dependency and on duplicate tests' subjects.  
 0.1.5 - Added more logging information about a test. Fixes [#16](https://github.com/yargalot/Email-Builder/issues/16)  
 0.1.4 - Added options.delay  
 0.1.3 - Add +1 to each duplicate title   

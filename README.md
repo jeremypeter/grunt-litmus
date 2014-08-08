@@ -56,7 +56,7 @@ Type: `String`
 Default value: `https://yourcompany.litmus.com`
 Required: `yes`
 
-Litmus account url
+Litmus account url. `yourcompany` name can be found in **_Account Settings_** > **_Profile_** > _**Subdomain for API**_
 
 #### options.clients
 Type: `Array`

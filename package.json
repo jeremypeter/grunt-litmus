@@ -1,7 +1,7 @@
 {
   "name": "grunt-litmus",
   "description": "Send email tests to Litmus",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "homepage": "https://github.com/jeremypeter/grunt-litmus",
   "author": "Jeremy Peter <jeremywpeter@gmail.com> (http://www.jeremypeterdesigns.com)",
   "repository": {

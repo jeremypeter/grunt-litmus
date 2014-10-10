@@ -18,7 +18,7 @@ Litmus.prototype.initVars = function() {
   this.reqObj = {
     auth: {
       user: this.options.username || '',
-      pass: this.options.password || ''      
+      pass: this.options.password || ''
     }
   };
 };
@@ -63,7 +63,7 @@ Litmus.prototype.getId = function(body) {
       });
 
   if($matchedName.length){
-    id = $matchedName.parent().children('id').text();
+    id = $matchedName.first().parent().children('id').text();
   }
 
   return id;
@@ -168,15 +168,14 @@ Litmus.prototype.logHeaders = function(err, res, body) {
     console.log(key.toUpperCase().bold + ': ' + headers[key]);
   });
 
-  console.log('---------------------\n' + body); 
+  console.log('---------------------\n' + body);
 
   if(status > 199 && status < 300){
     this.logSuccess('Test sent!');
     this.logStatusTable(body);
-  } 
-  // else {
-  //   throw new Error(headers.status);
-  // }
+  } else {
+    throw new Error(headers.status);
+  }
 
 };
 
@@ -185,7 +184,7 @@ Litmus.prototype.mailNewVersion = function(err, res, body) {
   if(err){ throw err; }
 
   var $ = cheerio.load(body),
-      guid = $('url_or_guid').text(); 
+      guid = $('url_or_guid').text();
 
   mail({
       from: 'no-reply@test.com',
@@ -200,17 +199,14 @@ Litmus.prototype.mailNewVersion = function(err, res, body) {
 };
 
 Litmus.prototype.getBuiltXml = function(html, title) {
-  var xmlApplications = builder.create('applications').att('type', 'array');
+
+  var xml = builder.create('test_set').ele('applications').att('type', 'array')
 
   _.each(this.options.clients, function(app) {
-    var item = xmlApplications.ele('application');
-
-    item.ele('code', app);
+    xml = xml.ele('application').ele('code', app).up().up()
   });
 
-  //Build Xml to send off, Join with Application XMl
-  var xml = builder.create('test_set')
-    .importXMLBuilder(xmlApplications)
+  xml = xml.up()
     .ele('save_defaults', 'false').up()
     .ele('use_defaults', 'false').up()
     .ele('email_source')
